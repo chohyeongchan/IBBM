@@ -1,0 +1,43 @@
+<!--
+  Costs and Revenues
+  - Total Revenue
+  - Average Revenue
+-->
+
+<div class="contaienr">
+  <fieldset>
+    <form name="crForm" novalidate>
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Cost of Goods Sold (COGs)</label>
+        <div class="">
+          <input type="number" name="opening_stock" placeholder="Opening Stock"
+                 ng-model='faCtrl.opening_stock'
+                 required> +
+          <input type="number" name="value_of_purchases" placeholder="Purchases"
+                 ng-model='faCtrl.value_of_purchases'
+                 required> -
+          <input type="number" name="closing_stock" placeholder="Closing Stock"
+                        ng-model='faCtrl.closing_stock'
+                        required> =
+          <span ng-if="faCtrl.opening_stock && faCtrl.value_of_purchases && faCtrl.closing_stock"> {{ faCtrl.opening_stock + faCtrl.value_of_purchases - faCtrl.closing_stock }} </span>
+          <span ng-hide="faCtrl.opening_stock && faCtrl.value_of_purchases && faCtrl.closing_stock">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Average Revenue</label>
+        <div class="">
+          <input type="number" name="total_revenue" placeholder="total revenue"
+                 ng-model='crCtrl.total_revenue'
+                 required> {{ crCrtl.price}} /
+          <input type="number" name="tr_quality" placeholder="quality"
+                 ng-model='crCtrl.tr_quality'
+                 required> =
+          <span ng-if="crCtrl.total_revenue && crCtrl.tr_quality"> {{ crCtrl.total_revenue / crCtrl.tr_quality }} </span>
+          <span ng-hide="crCtrl.total_revenue && crCtrl.tr_quality">?</span>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+
+</div>

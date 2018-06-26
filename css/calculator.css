@@ -1,0 +1,13 @@
+html {
+  font-size: 1rem;
+}
+a {
+  color: #000 !important;
+}
+
+a:hover {
+  background: #c3c3c3;
+}
+.cat-tabs {
+  font-size: 12px;
+}

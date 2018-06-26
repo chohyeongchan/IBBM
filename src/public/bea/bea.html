@@ -1,0 +1,32 @@
+<!--
+  Break-even Analysis
+  - Contribution per Unit
+  - Total Contribution
+  - Gross Profit
+  - Break-even Quality
+  - Margin of Safety
+-->
+
+<div class="contaienr">
+  <fieldset>
+    <form name="beaForm" novalidate>
+      <div class="form-group col-lg-6 mx-auto mt-4">
+        <label>Contribution per Unit</label>
+        <div class="">
+          <input class="" type="text" name="price" placeholder="price"
+                 ng-model='beaCtrl.price'
+                 required> -
+          <input type="text" name="average_variable_cost" placeholder="average variable cost"
+                 ng-model='beaCtrl.average_variable_cost'
+                 required> =
+
+          <span ng-if="beaCtrl.price && beaCtrl.average_variable_cost"> {{ beaCtrl.price - beaCtrl.average_variable_cost }} </span>
+          <span ng-hide="beaCtrl.price && beaCtrl.average_variable_cost">?</span>
+        </div>
+      </div>
+
+
+    </form>
+  </fieldset>
+
+</div>

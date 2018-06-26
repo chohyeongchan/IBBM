@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/calculator.css">
+    <title>IB Business & Manangement Finance Calculator</title>
+  </head>
+  <body ng-app="calculator" ng-strict-di>
+    <head>
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand mx-auto" href="/">
+          IB Business & Management Finance Calculator
+        </a>
+      </nav>
+      <div class="container cat-tabs">
+        <ul class="nav nav-tabs nav-fill justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="public.cr">
+              <span>Costs & Revenues</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="public.bea">
+              <span>Break-even Analysis</span>
+            </a>
+          </li>
+          <li class="nav-item" ui-sref="public.fa">
+            <a class="nav-link">Final Accounts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Profitability and Ratio Analysis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Efficiency Ratio Analysis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Cash Flow</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Investment Appraisal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Budgets</a>
+          </li>
+        </ul>
+      </div>
+    </head>
+
+    <ui-view>
+      <div class="container">
+        <h2 class="text-center">Welcome!</h2>
+      </div>
+    </ui-view>
+
+    <footer></footer>
+
+    <!-- Libs -->
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script> <!-- bootstrap 4.0.0 -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Main Calculator Module -->
+    <script src="src/calculator.module.js"></script>
+
+    <!-- Public Module -->
+    <script src="src/public/public.module.js"></script>
+    <script src="src/public/public.routes.js"></script>
+    <script src="src/public/cr/cr.controller.js"></script>
+    <script src="src/public/bea/bea.controller.js"></script>
+    <script src="src/public/fa/fa.controller.js"></script>
+
+
+  </body>
+</html>

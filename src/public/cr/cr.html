@@ -1,0 +1,40 @@
+<!--
+  Costs and Revenues
+  - Total Revenue
+  - Average Revenue
+-->
+
+<div class="contaienr">
+  <fieldset>
+    <form name="crForm" novalidate>
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Total Revenue</label>
+        <div class="">
+          <input class="" type="text" name="price" placeholder="price"
+                 ng-model='crCtrl.price'
+                 required> {{ crCrtl.price}} x
+          <input type="text" name="quality" placeholder="quality"
+                 ng-model='crCtrl.quality'
+                 required> =
+          <span ng-if="crCtrl.price && crCtrl.quality"> {{ crCtrl.price * crCtrl.quality }} </span>
+          <span ng-hide="crCtrl.price && crCtrl.quality">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Average Revenue</label>
+        <div class="">
+          <input type="text" name="total_revenue" placeholder="total revenue"
+                 ng-model='crCtrl.total_revenue'
+                 required> {{ crCrtl.price}} /
+          <input type="text" name="tr_quality" placeholder="quality"
+                 ng-model='crCtrl.tr_quality'
+                 required> =
+          <span ng-if="crCtrl.total_revenue && crCtrl.tr_quality"> {{ crCtrl.total_revenue / crCtrl.tr_quality }} </span>
+          <span ng-hide="crCtrl.total_revenue && crCtrl.tr_quality">?</span>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+
+</div>
