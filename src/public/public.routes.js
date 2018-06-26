@@ -27,6 +27,11 @@
         url: '/fa',
         templateUrl: 'src/public/fa/fa.html',
         controller: 'FAController as faCtrl'
+      })
+      .state('public.PaR', {
+        url: '/PaR',
+        templateUrl: 'src/public/PaR/PaR.html',
+        controller: 'PaRController as PaRCtrl'
       });
   }
 })();

@@ -1,12 +1,14 @@
 <!--
-  Costs and Revenues
-  - Total Revenue
-  - Average Revenue
+  Final Accounts
+  Costs of Goods Sold (COGs)
+  Net Profit
+  Net Assets (Owner's Equity)
+  Annual Depreciation
 -->
 
 <div class="contaienr">
   <fieldset>
-    <form name="crForm" novalidate>
+    <form name="faForm" novalidate>
       <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
         <label>Cost of Goods Sold (COGs)</label>
         <div class="">
@@ -25,16 +27,32 @@
       </div>
 
       <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
-        <label>Average Revenue</label>
+        <label>Net Profit</label>
         <div class="">
-          <input type="number" name="total_revenue" placeholder="total revenue"
-                 ng-model='crCtrl.total_revenue'
-                 required> {{ crCrtl.price}} /
-          <input type="number" name="tr_quality" placeholder="quality"
-                 ng-model='crCtrl.tr_quality'
+          <input type="number" name="gross_profit_np" placeholder="Gross Profit"
+                 ng-model='faCtrl.gross_profit_np'
+                 required> -
+          <input type="number" name="expenses_np" placeholder="Expenses (Overheads)"
+                 ng-model='faCtrl.expenses_np'
                  required> =
-          <span ng-if="crCtrl.total_revenue && crCtrl.tr_quality"> {{ crCtrl.total_revenue / crCtrl.tr_quality }} </span>
-          <span ng-hide="crCtrl.total_revenue && crCtrl.tr_quality">?</span>
+
+          <span ng-if="faCtrl.gross_profit_np && faCtrl.expenses_np"> {{ faCtrl.gross_profit_np - faCtrl.expenses_np }} </span>
+          <span ng-hide="faCtrl.gross_profit_np && faCtrl.expenses_np">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Annual Depreciation</label>
+        <div class="">
+          <input type="number" name="purchase_cost_ad" placeholder="Purchase Cost"
+                 ng-model='faCtrl.purchase_cost_ad'
+                 required> /
+          <input type="number" name="life_span_ad" placeholder="Life-span"
+                 ng-model='faCtrl.life_span_ad'
+                 required> =
+
+          <span ng-if="faCtrl.purchase_cost_ad && faCtrl.life_span_ad"> {{ faCtrl.purchase_cost_ad / faCtrl.life_span_ad }} </span>
+          <span ng-hide="faCtrl.purchase_cost_ad && faCtrl.life_span_ad">?</span>
         </div>
       </div>
     </form>

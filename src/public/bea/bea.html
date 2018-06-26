@@ -3,7 +3,7 @@
   - Contribution per Unit
   - Total Contribution
   - Gross Profit
-  - Break-even Quality
+  - Break-even Quatity
   - Margin of Safety
 -->
 
@@ -13,10 +13,10 @@
       <div class="form-group col-lg-6 mx-auto mt-4">
         <label>Contribution per Unit</label>
         <div class="">
-          <input class="" type="text" name="price" placeholder="price"
+          <input class="" type="number" name="price" placeholder="Price"
                  ng-model='beaCtrl.price'
                  required> -
-          <input type="text" name="average_variable_cost" placeholder="average variable cost"
+          <input type="number" name="average_variable_cost" placeholder="Average Variable Cost"
                  ng-model='beaCtrl.average_variable_cost'
                  required> =
 
@@ -25,7 +25,71 @@
         </div>
       </div>
 
+      <div class="form-group col-lg-6 mx-auto mt-4">
+        <label>Total Contribution</label>
+        <div class="">
+          (<input class="" type="number" name="price_tc" placeholder="Price"
+                 ng-model='beaCtrl.price_tc'
+                 required> -
+          <input type="number" name="average_variable_cost_tc" placeholder="Average Variable Cost"
+                 ng-model='beaCtrl.average_variable_cost_tc'
+                 required>) *
+          <input class="" type="number" name="quantity_tc" placeholder="Quantity"
+                 ng-model='beaCtrl.quantity_tc'
+                 required> =
 
+            <span ng-if="beaCtrl.price_tc && beaCtrl.average_variable_cost_tc && beaCtrl.quantity_tc"> {{ (beaCtrl.price_tc - beaCtrl.average_variable_cost_tc) * beaCtrl.quantity_tc }} </span>
+            <span ng-hide="beaCtrl.price_tc && beaCtrl.average_variable_cost_tc && beaCtrl.quantity_tc">?</span>
+          </div>
+      </div>
+
+      <div class="form-group col-lg-6 mx-auto mt-4">
+        <label>Gross Profit</label>
+        <div class="">
+          <input class="" type="number" name="total_revenue_gp" placeholder="Total Revenue"
+                 ng-model='beaCtrl.total_revenue_gp'
+                 required> -
+          <input type="number" name="total_variable_cost_gp" placeholder="Total Variable Cost"
+                 ng-model='beaCtrl.total_variable_cost_gp'
+                 required> =
+
+            <span ng-if="beaCtrl.total_revenue_gp && beaCtrl.total_variable_cost_gp"> {{ beaCtrl.total_revenue_gp - beaCtrl.total_variable_cost_gp }} </span>
+            <span ng-hide="beaCtrl.total_revenue_gp && beaCtrl.total_variable_cost_gp">?</span>
+          </div>
+      </div>
+
+      <div class="form-group col-lg-6 mx-auto mt-4">
+        <label>Break-even Quatity</label>
+        <div class="">
+          <input class="" type="number" name="total_fixed_cost_beq" placeholder="Total Fixed Cost"
+                 ng-model='beaCtrl.total_fixed_cost_beq'
+                 required> /
+          (<input type="number" name="price_beq" placeholder="Price"
+                 ng-model='beaCtrl.price_beq'
+                 required> -
+          <input type="number" name="average_variable_cost_beq" placeholder="Average Variable Cost"
+                 ng-model='beaCtrl.average_variable_cost_beq'
+                required>) =
+
+            <span ng-if="beaCtrl.total_fixed_cost_beq && beaCtrl.price_beq && beaCtrl.average_variable_cost_beq"> {{ beaCtrl.total_fixed_cost_beq / (beaCtrl.price_beq - beaCtrl.average_variable_cost_beq) }} </span>
+            <span ng-hide="beaCtrl.total_fixed_cost_beq && beaCtrl.price_beq && beaCtrl.average_variable_cost_beq">?</span>
+          </div>
+      </div>
+
+      <div class="form-group col-lg-6 mx-auto mt-4">
+        <label>Margin of Safety (MOS)</label>
+        <div class="">
+          <input class="" type="number" name="level_of_demand_mos" placeholder="Level of Demand"
+                 ng-model='beaCtrl.level_of_demand_mos'
+                 required> -
+          <input type="number" name="beq_mos" placeholder="Break-even Quatity"
+                 ng-model='beaCtrl.beq_mos'
+                 required> =
+
+            <span ng-if="beaCtrl.level_of_demand_mos && beaCtrl.beq_mos"> {{ beaCtrl.level_of_demand_mos - beaCtrl.beq_mos }} </span>
+            <span ng-hide="beaCtrl.level_of_demand_mos && beaCtrl.beq_mos">?</span>
+          </div>
+      </div>
     </form>
   </fieldset>
 

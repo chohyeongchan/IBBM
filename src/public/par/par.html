@@ -1,0 +1,31 @@
+<!--
+  Profitability and Ratio Analysis
+  Gross Profit Margin (GPM)
+  Net Profit Margin (NPM)
+  Return on Capital Employed (ROCE)
+  Capital Employed
+  Current Ratio
+  Acid Test Ratio (Quick Ratio)
+-->
+
+<div class="container">
+  <fieldset>
+    <form name="parForm" novalidate>
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Gross Profit Margin (GPM)</label>
+        <div class="">
+          <input type="number" name="gross_profit_gpm" placeholder="Gross Profit"
+                 ng-model='parCtrl.gross_profit_gpm'
+                 required> /
+          <input type="number" name="sales_revenue" placeholder="Sales Revenue"
+                 ng-model='parCtrl.sales_revenue'
+                 required> * 100% =
+
+          <span ng-if="parCtrl.gross_profit_gpm && parCtrl.sales_revenue"> {{ (parCtrl.gross_profit_gpm / parCtrl.sales_revenue) * 100 }} </span>
+          <span ng-hide="parCtrl.gross_profit_gpm && parCtrl.sales_revenue">?</span>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+
+</div>
