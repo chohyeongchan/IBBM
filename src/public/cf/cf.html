@@ -1,0 +1,25 @@
+<!--
+Cash Flow
+Working Capital (net current asset)
+-->
+
+<div class="contaienr">
+  <fieldset>
+    <form name="cfForm" novalidate>
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Working Capital (net current asset)</label>
+        <div class="">
+          <input type="number" name="ca_wc" placeholder="Current Asset"
+                 ng-model='cfCtrl.ca_wc'
+                 required> -
+          <input type="number" name="cl_wc" placeholder="Current Liabilities"
+                 ng-model='cfCtrl.cl_wc'
+                 required> =
+          <span ng-if="cfCtrl.ca_wc && cfCtrl.cl_wc"> {{ cfCtrl.ca_wc - cfCtrl.cl_wc }} </span>
+          <span ng-hide="cfCtrl.ca_wc && cfCtrl.cl_wc">?</span>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+
+</div>

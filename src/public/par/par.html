@@ -8,7 +8,7 @@
   Acid Test Ratio (Quick Ratio)
 -->
 
-<div class="container">
+<div class="contaienr">
   <fieldset>
     <form name="parForm" novalidate>
       <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
@@ -21,8 +21,89 @@
                  ng-model='parCtrl.sales_revenue'
                  required> * 100% =
 
-          <span ng-if="parCtrl.gross_profit_gpm && parCtrl.sales_revenue"> {{ (parCtrl.gross_profit_gpm / parCtrl.sales_revenue) * 100 }} </span>
+          <span ng-if="parCtrl.gross_profit_gpm && parCtrl.sales_revenue"> {{ (parCtrl.gross_profit_gpm / parCtrl.sales_revenue) * 100 }}% </span>
           <span ng-hide="parCtrl.gross_profit_gpm && parCtrl.sales_revenue">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Net Profit Margin (NPM)</label>
+        <div class="">
+          <input type="number" name="net_profit_npm" placeholder="Net Profit"
+                 ng-model='parCtrl.net_profit_npm'
+                 required> /
+          <input type="number" name="sales_revenue_npm" placeholder="Sales Revenue"
+                 ng-model='parCtrl.sales_revenue_npm'
+                 required> * 100% =
+
+          <span ng-if="parCtrl.net_profit_npm && parCtrl.sales_revenue_npm"> {{ (parCtrl.net_profit_npm / parCtrl.sales_revenue_npm) * 100 }}% </span>
+          <span ng-hide="parCtrl.net_profit_npm && parCtrl.sales_revenue_npm">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Return on Capital Employed (ROCE)</label>
+        <div class="">
+          <input type="number" name="npbit_roce" placeholder="Net Profit Before Interest and Tax (NPBIT)"
+                 ng-model='parCtrl.npbit_roce'
+                 required> /
+          <input type="number" name="ce_roce" placeholder="Capital Employed"
+                 ng-model='parCtrl.ce_roce'
+                 required> * 100% =
+
+          <span ng-if="parCtrl.npbit_roce && parCtrl.ce_roce"> {{ (parCtrl.npbit_roce / parCtrl.ce_roce) * 100 }}% </span>
+          <span ng-hide="parCtrl.npbit_roce && parCtrl.ce_roce">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Capital Employed</label>
+        <div class="">
+          <input type="number" name="loan_ce" placeholder="Loan Capital"
+                 ng-model='parCtrl.loan_ce'
+                 required> +
+          <input type="number" name="share_ce" placeholder="Share Capital"
+                 ng-model='parCtrl.share_ce'
+                 required> -
+          <input type="number" name="rp_ce" placeholder="Retained Profit"
+                 ng-model='parCtrl.rp_ce'
+                 required> =
+
+          <span ng-if="parCtrl.loan_ce && parCtrl.share_ce && parCtrl.rp_ce"> {{ parCtrl.loan_ce + parCtrl.share_ce - parCtrl.rp_ce}} </span>
+          <span ng-hide="parCtrl.loan_ce && parCtrl.share_ce && parCtrl.rp_ce">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Current Ratio</label>
+        <div class="">
+          <input type="number" name="ca_cr" placeholder="Current Asset"
+                 ng-model='parCtrl.ca_cr'
+                 required> /
+          <input type="number" name="cl_cr" placeholder="Current Liabilities"
+                 ng-model='parCtrl.cl_cr'
+                 required> =
+
+          <span ng-if="parCtrl.ca_cr && parCtrl.cl_cr"> {{ parCtrl.ca_cr / parCtrl.cl_cr}} </span>
+          <span ng-hide="parCtrl.ca_cr && parCtrl.cl_cr">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Acid Test Ratio (Quick Ratio)</label>
+        <div class="">
+          (<input type="number" name="ca_atr" placeholder="Current Asset"
+                 ng-model='parCtrl.ca_atr'
+                 required> -
+          <input type="number" name="stock_atr" placeholder="Stock"
+                 ng-model='parCtrl.stock_atr'
+                 required>) /
+          <input type="number" name="cl_atr" placeholder="Current Liabilities"
+                 ng-model='parCtrl.cl_atr'
+                 required> =
+
+          <span ng-if="parCtrl.ca_atr && parCtrl.stock_atr && parCtrl.cl_atr"> {{ (parCtrl.ca_atr - parCtrl.stock_atr) / parCtrl.cl_atr}} </span>
+          <span ng-hide="parCtrl.ca_atr && parCtrl.stock_atr && parCtrl.cl_atr">?</span>
         </div>
       </div>
     </form>

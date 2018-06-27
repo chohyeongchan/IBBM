@@ -1,0 +1,43 @@
+<!--
+Investment Appraisal
+Average Rate of Return (ARR)
+Net Present Value (NPV)
+-->
+
+<div class="contaienr">
+  <fieldset>
+    <form name="iaForm" novalidate>
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Average Rate of Return (ARR)</label>
+        <div class="">
+          <input type="number" name="tp_arr" placeholder="Total Profit during Project's Lifespan"
+                 ng-model='iaCtrl.tp_arr'
+                 required> /
+          <input type="number" name="pd_arr" placeholder="Project Duration in Years"
+                 ng-model='iaCtrl.pd_arr'
+                 required> /
+          <input type="number" name="im_arr" placeholder="Initial Amount Invested"
+                 ng-model='iaCtrl.im_arr'
+                 required> =
+          <span ng-if="iaCtrl.tp_arr && iaCtrl.pd_arr && iaCtrl.im_arr"> {{ iaCtrl.tp_arr / iaCtrl.pd_arr / iaCtrl.im_arr }} </span>
+          <span ng-hide="iaCtrl.tp_arr && iaCtrl.pd_arr && iaCtrl.im_arr">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Net Present Value (NPV)</label>
+        <div class="">
+          <input type="number" name="sum_npv" placeholder="Sum of Present Values"
+                 ng-model='iaCtrl.sum_npv'
+                 required> -
+          <input type="number" name="cost_npv" placeholder="Cost of Investment"
+                 ng-model='iaCtrl.cost_npv'
+                 required> =
+          <span ng-if="iaCtrl.sum_npv && iaCtrl.cost_npv"> {{ iaCtrl.sum_npv - iaCtrl.cost_npv }} </span>
+          <span ng-hide="iaCtrl.sum_npv && iaCtrl.cost_npv">?</span>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+
+</div>

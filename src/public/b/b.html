@@ -1,0 +1,25 @@
+<!--
+Budgets
+Varbnce
+-->
+
+<div class="contaienr">
+  <fieldset>
+    <form name="bForm" novalidate>
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Variance</label>
+        <div class="">
+          <input type="number" name="ao_v" placeholder="Actual Outcome"
+                 ng-model='bCtrl.ao_v'
+                 required> -
+          <input type="number" name="bd_v" placeholder="Budgeted Outcome"
+                 ng-model='bCtrl.bd_v'
+                 required> =
+          <span ng-if="bCtrl.ao_v && bCtrl.bd_v"> {{ bCtrl.ao_v - bCtrl.bd_v }} </span>
+          <span ng-hide="bCtrl.ao_v && bCtrl.bd_v">?</span>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+
+</div>

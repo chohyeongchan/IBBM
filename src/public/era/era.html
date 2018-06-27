@@ -1,0 +1,70 @@
+<!--
+Efficiency Ratio Analysis
+Stock Turnover (number of times)
+Debtor Days
+Creditor Days
+Gearing Ratio
+-->
+
+<div class="contaienr">
+  <fieldset>
+    <form name="eraForm" novalidate>
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Stock Turnover (number of times)</label>
+        <div class="">
+          <input type="number" name="cogs_st" placeholder="Cost of Goods Sold"
+                 ng-model='eraCtrl.cogs_st'
+                 required> /
+          <input type="number" name="avst_st" placeholder="Average Stock"
+                 ng-model='eraCtrl.avst_st'
+                 required> =
+          <span ng-if="eraCtrl.cogs_st && eraCtrl.avst_st"> {{ eraCtrl.cogs_st / eraCtrl.avst_st }} </span>
+          <span ng-hide="eraCtrl.cogs_st && eraCtrl.avst_st">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Debtor Days</label>
+        <div class="">
+          (<input type="number" name="debtor_dd" placeholder="Debtors"
+                 ng-model='eraCtrl.debtor_dd'
+                 required> /
+          <input type="number" name="revenue_dd" placeholder="Sales Revenue"
+                 ng-model='eraCtrl.revenue_dd'
+                 required> ) * 365 =
+          <span ng-if="eraCtrl.debtor_dd && eraCtrl.revenue_dd"> {{ (eraCtrl.debtor_dd / eraCtrl.revenue_dd) * 365 }} days </span>
+          <span ng-hide="eraCtrl.debtor_dd && eraCtrl.revenue_dd">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Creditor Days</label>
+        <div class="">
+          (<input type="number" name="creditor_dd" placeholder="Creditors"
+                 ng-model='eraCtrl.creditor_dd'
+                 required> /
+          <input type="number" name="cogs_dd" placeholder="Cost of Goods Sold"
+                 ng-model='eraCtrl.cogs_dd'
+                 required> ) * 365 =
+          <span ng-if="eraCtrl.creditor_dd && eraCtrl.cogs_dd"> {{ (eraCtrl.creditor_dd / eraCtrl.cogs_dd) * 365 }} days </span>
+          <span ng-hide="eraCtrl.creditor_dd && eraCtrl.cogs_dd">?</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-8 col-lg-6 mx-auto mt-4">
+        <label>Gearing Ratio</label>
+        <div class="">
+          (<input type="number" name="lt_gr" placeholder="Long-term Liabilities"
+                 ng-model='eraCtrl.lt_gr'
+                 required> /
+          <input type="number" name="cap_gr" placeholder="Capital Employed"
+                 ng-model='eraCtrl.cap_gr'
+                 required> ) * 100 =
+          <span ng-if="eraCtrl.lt_gr && eraCtrl.cap_gr"> {{ (eraCtrl.lt_gr / eraCtrl.cap_gr) * 100 }} % </span>
+          <span ng-hide="eraCtrl.lt_gr && eraCtrl.cap_gr">?</span>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+
+</div>
